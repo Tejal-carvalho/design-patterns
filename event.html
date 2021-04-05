@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Changing reposibility pattern</title>
+</head>
+
+<body onclick="foo1(event)">
+    <section onclick="foo2(event)">
+        <input type="button" value="click" onclick="foo3(event)">
+    </section>
+    <script>
+        function foo1(e){
+            alert("body "+e.mss);
+        }
+        function foo2(e){
+            alert("section "+e.mss);
+            e.stopPropagation();
+        }
+        function foo3(e){
+            e.mss="hello2";
+            alert("button");
+        }
+    </script>
+</body>
+
+</html>
